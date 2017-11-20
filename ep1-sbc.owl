@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#"
+     xml:base="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:renata="http://www.ime.usp.br/~renata/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:untitled-ontology-2="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:foaf="https://www.ime.usp.br/~renata/FOAF-modified.rdf"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2">
+        <owl:imports rdf:resource="http://www.ime.usp.br/~renata/FOAF-modified"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#acted_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#acted_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedmade"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#actor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#actor">
+        <rdfs:subPropertyOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedmaker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#directed -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#directed">
+        <rdfs:subPropertyOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedmade"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Director"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#director -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#director">
+        <rdfs:subPropertyOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedmaker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Director"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Director">
+        <rdfs:subClassOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie">
+        <rdfs:subClassOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedProject"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Kill_Bill -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Kill_Bill">
+        <rdf:type rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie"/>
+        <actor rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Uma_Thurman"/>
+        <director rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Quentin_Tarantino"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2003</year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Pulp_Fiction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Pulp_Fiction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Movie"/>
+        <actor rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Uma_Thurman"/>
+        <director rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Quentin_Tarantino"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1994</year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Quentin_Tarantino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Quentin_Tarantino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Director"/>
+        <directed rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Kill_Bill"/>
+        <directed rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Pulp_Fiction"/>
+        <renata:FOAF-modifiedage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54</renata:FOAF-modifiedage>
+        <renata:FOAF-modifiedbirthday>03-27</renata:FOAF-modifiedbirthday>
+        <renata:FOAF-modifiedfamilyName>Tarantino</renata:FOAF-modifiedfamilyName>
+        <renata:FOAF-modifiedfirstName>Quentin</renata:FOAF-modifiedfirstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Uma_Thurman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Uma_Thurman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Actor"/>
+        <acted_in rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Kill_Bill"/>
+        <acted_in rdf:resource="http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#Pulp_Fiction"/>
+        <renata:FOAF-modifiedage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</renata:FOAF-modifiedage>
+        <renata:FOAF-modifiedbirthday>04-29</renata:FOAF-modifiedbirthday>
+        <renata:FOAF-modifiedfamilyName>Thurman</renata:FOAF-modifiedfamilyName>
+        <renata:FOAF-modifiedfirstName>Uma</renata:FOAF-modifiedfirstName>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
