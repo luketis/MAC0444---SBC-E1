@@ -106,7 +106,8 @@ if __name__ == "__main__":
               'harvey_movies':  get_starred_movies("./harvey_keitel")}
 
     movies_list = set(sum([star_movie[key] for key in star_movie], []))
-
+    actors_paths = ["./actors.list", "./actresses.list"]
+    director_paths = ["./directors.list"]
     actor2movie, movie2actor = get_cast(movies_list, actors_paths)
     director2movie, movie2director = get_cast(movies_list, director_paths)
     rdf_about =  "\"http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#"
