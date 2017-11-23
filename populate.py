@@ -20,7 +20,10 @@ def get_par_contents(array):
     return contents
 
 def get_movie_name(line, last_tab):
-    first_par = last_tab + next_occ('(', line[last_tab:])
+    first_par = next_occ('(', line[last_tab:])
+    if first_par is None:
+        return -1
+    first_par += last_tab
     par_contents = get_par_contents(line)
     if 'TV' in par_contents or 'V' in par_contents:
         return -1
@@ -60,8 +63,8 @@ def get_cast(movies, paths):
                         actor2movie[actor] = []
                     actor2movie[actor] += [movie_name]
                     if movie_name not in movie2actor:
-                        movie2actor = []
-                    movie2actor[movie_name] = actor
+                        movie2actor[movie_name] = []
+                    movie2actor[movie_name] += [actor]
                     
     return actor2movie, movie2actor
 
