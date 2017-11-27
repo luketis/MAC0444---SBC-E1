@@ -38,8 +38,8 @@ def get_movie_name(line, last_tab):
         #    log.write("".join(par_contents) +  "\n")
         return -1
     movie_name = line[last_tab+1:first_par - 1].replace(" ", "_")
-    if movie_name[0] == "\"":
-        movie_name = movie_name[1:-1]
+    movie_name = movie_name.replace('"', "")    
+
     return (movie_name, line[first_par+1:first_par+5])
 
 def get_starred_movies(path):
