@@ -38,6 +38,8 @@ def get_movie_name(line, last_tab):
         #    log.write("".join(par_contents) +  "\n")
         return -1
     movie_name = line[last_tab+1:first_par - 1].replace(" ", "_")
+    if movie_name[0] == "\"":
+        movie_name = movie_name[1:-1]
     return (movie_name, line[first_par+1:first_par+5])
 
 def get_starred_movies(path):
@@ -90,7 +92,8 @@ def set_ontology_ad(dict_of, type_data, prefix, path, rel):
         
         for movie in dict_of[element]:
             print("        <"+rel+" rdf:resource=" +prefix+ movie[0]+ "\"/>")
-        name = element.split("_", maxsplit=2)
+        name = element.split("_")
+        name = ["".join(name[:-1]), name[-1]]
         if len(name) > 1:
             print("        <renata:FOAF-modifiedfamilyName>"+name[0]+"</renata:FOAF-modifiedfamilyName>")
         
