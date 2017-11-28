@@ -38,7 +38,8 @@ def get_movie_name(line, last_tab):
         #    log.write("".join(par_contents) +  "\n")
         return -1
     movie_name = line[last_tab+1:first_par - 1].replace(" ", "_")
-    movie_name = movie_name.replace('"', "")    
+    if '"' in movie_name:
+        return -1    
 
     return (movie_name, line[first_par+1:first_par+5])
 
