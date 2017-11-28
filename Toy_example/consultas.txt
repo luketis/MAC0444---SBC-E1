@@ -1,0 +1,45 @@
+#########CONSULTA 01###########
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
+SELECT ?actors
+	WHERE { onto:Pulp_Fiction onto:actor ?actors}
+
+Result:
+
+##########CONSULTA 02#########
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
+SELECT ?movies
+	WHERE { onto:Quentin_Tarantino onto:directed ?movies}
+
+Result: Pulp_Fiction
+		Kill_Bill
+
+#########CONSULTA 03#########
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
+SELECT ?movies
+	WHERE { onto:Bill_Murray onto:acted_in ?movies}
+
+Results: O_Grande_Hotel_Budapeste
+
+#########CONSULTA 04-Not Sure#########
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
+SELECT ?movie1
+	WHERE {?movie1  onto:actor ?Uma_Thurman.
+	                 ?Bill_Murray onto:acted_in ?movie2.
+	                 FILTER(?movie1 = ?movie2)
+          }

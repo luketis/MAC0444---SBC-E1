@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:renata="http://www.ime.usp.br/~renata/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:untitled-ontology-5="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5">
+        <owl:imports rdf:resource="http://www.ime.usp.br/~renata/FOAF-modified"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#acted_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#acted_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedmade"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#actor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#actor">
+        <rdfs:subPropertyOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedmaker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#directed -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#directed">
+        <rdfs:subPropertyOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedmade"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Director"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#director -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#director">
+        <rdfs:subPropertyOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedmaker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Director"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Director">
+        <rdfs:subClassOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie">
+        <rdfs:subClassOf rdf:resource="http://www.ime.usp.br/~renata/FOAF-modifiedProject"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Bill_Murray -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Bill_Murray">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Actor"/>
+        <acted_in rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#O_Grande_Hotel_Budapeste"/>
+        <renata:FOAF-modifiedfamilyName>Murray</renata:FOAF-modifiedfamilyName>
+        <renata:FOAF-modifiedfirstName>Bill</renata:FOAF-modifiedfirstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#John_Travolta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#John_Travolta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Actor"/>
+        <acted_in rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Pulp_Fiction"/>
+        <renata:FOAF-modifiedfamilyName>Travolta</renata:FOAF-modifiedfamilyName>
+        <renata:FOAF-modifiedfirstName>John</renata:FOAF-modifiedfirstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Kill_Bill -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Kill_Bill">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie"/>
+        <actor rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Lucy_Liu"/>
+        <actor rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Uma_Thurman"/>
+        <director rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Quentin_Tarantino"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2004</year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Lucy_Liu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Lucy_Liu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Actor"/>
+        <acted_in rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Kill_Bill"/>
+        <renata:FOAF-modifiedfamilyName>Liu</renata:FOAF-modifiedfamilyName>
+        <renata:FOAF-modifiedfirstName>Lucy</renata:FOAF-modifiedfirstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#O_Grande_Hotel_Budapeste -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#O_Grande_Hotel_Budapeste">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie"/>
+        <actor rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Bill_Murray"/>
+        <director rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Wes_Anderson"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Pulp_Fiction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Pulp_Fiction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Movie"/>
+        <actor rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#John_Travolta"/>
+        <actor rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Uma_Thurman"/>
+        <director rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Quentin_Tarantino"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1995</year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Quentin_Tarantino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Quentin_Tarantino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Director"/>
+        <directed rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Kill_Bill"/>
+        <directed rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Pulp_Fiction"/>
+        <renata:FOAF-modifiedfamilyName>Tarantino</renata:FOAF-modifiedfamilyName>
+        <renata:FOAF-modifiedfirstName>Quentin</renata:FOAF-modifiedfirstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Uma_Thurman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Uma_Thurman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Actor"/>
+        <acted_in rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Kill_Bill"/>
+        <acted_in rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#O_Grande_Hotel_Budapeste"/>
+        <acted_in rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Pulp_Fiction"/>
+        <renata:FOAF-modifiedfamilyName>Thurman</renata:FOAF-modifiedfamilyName>
+        <renata:FOAF-modifiedfirstName>Uma</renata:FOAF-modifiedfirstName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Wes_Anderson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Wes_Anderson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#Director"/>
+        <directed rdf:resource="http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#O_Grande_Hotel_Budapeste"/>
+        <renata:FOAF-modifiedfamilyName>Anderson</renata:FOAF-modifiedfamilyName>
+        <renata:FOAF-modifiedfirstName>Wes</renata:FOAF-modifiedfirstName>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
