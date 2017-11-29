@@ -32,14 +32,74 @@ SELECT ?movies
 
 Results: O_Grande_Hotel_Budapeste
 
-#########CONSULTA 04-Not Sure#########
+#########CONSULTA 04#########
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
 SELECT ?movie1
-	WHERE {?movie1  onto:actor ?Uma_Thurman.
-	                 ?Bill_Murray onto:acted_in ?movie2.
+	WHERE {?movie1  onto:actor onto:Uma_Thurman.
+	                 onto:Bill_Murray onto:acted_in ?movie2.
 	                 FILTER(?movie1 = ?movie2)
           }
+
+
+###############CONSULTA 05#########
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
+SELECT ?dir
+	WHERE { onto:Uma_Thurman onto:acted_in  ?movie1.
+                                 onto:Lucy_Liu onto:acted_in ?movie2.
+	               ?dir onto:directed ?movie1.
+		FILTER(?movie1 = ?movie2) }
+
+Results: Quentin_Tarantino
+
+###################CONSULTA 06-sai ?m############
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
+SELECT DISTINCT ?dir (COUNT (?movie1) AS ?m)
+	WHERE { onto:Uma_Thurman onto:acted_in ?movie1.
+                                 ?movie1 onto:director ?dir.
+	 }
+	GROUP BY ?dir
+	ORDER BY DESC (?m)
+	LIMIT 1
+
+#################CONSULTA 07-sai ?m#############
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
+SELECT DISTINCT ?actor (COUNT (?movie1) AS ?m)
+	WHERE { onto:Quentin_Tarantino onto:directed ?movie1.
+                                 ?movie1 onto:actor ?actor.
+	 }
+	GROUP BY ?actor
+	ORDER BY DESC (?m)
+	LIMIT 1
+
+##############CONSULTA 08###############
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://www.semanticweb.org/larissa/ontologies/2017/10/untitled-ontology-5#>
+SELECT ?dir ?year1
+	WHERE { onto:Uma_Thurman onto:acted_in  ?movie1.
+                                 onto:Lucy_Liu onto:acted_in ?movie2.
+	               ?dir onto:directed ?movie1.
+	               ?movie1 onto:year ?year1.
+	               ?movie2 onto:year ?year2. 
+		FILTER(1980< ?year1 && ?year1<2005 && 1980 < ?year2 && ?year2<2005 )
+}
+
+##############CONSULTA 09###########

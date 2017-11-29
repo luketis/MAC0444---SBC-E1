@@ -86,13 +86,16 @@ def get_cast(movies, paths):
 
 def set_ontology_ad(dict_of, type_data, prefix, path, rel):
     for element in dict_of:
+        element = element.replace("(", "")
+        element = element.replace(")", "")
+        element = element.replace("'", "")
         print("Individual: " + prefix + ":" + element)
         print()
         print("    Types:")
         print("        " + prefix + ":" + type_data)
         print("    Facts:")
-        for movie in dict_of[element]:
-            print("     "+prefix+":"+rel+"  "+prefix+":"+movie[0]+",")
+        #for movie in dict_of[element]:
+        #    print("     "+prefix+":"+rel+"  "+prefix+":"+movie[0]+",")
         name = element.split("_")
         name = ["".join(name[:-1]), name[-1]]
         if len(name) > 1:
@@ -104,17 +107,27 @@ def set_ontology_ad(dict_of, type_data, prefix, path, rel):
 
 def set_ontology_m(movies_ac, movies_dir, prefix, path):
     for element in movies_ac:
-        print("Individual: " + prefix + ":" + element[0])
+
+        elemen = (element[0].replace(",", ""), element[1])
+        elemen = (elemen[0].replace("?", "_question_mark"), element[1])
+        elemen = (elemen[0].replace("'", ""), element[1])
+        if elemen[1] == "????":
+            elemen = (elemen[0],-1)
+        print("Individual: " + prefix + ":" + elemen[0])
         print()
         print("    Types:")
         print("        " + prefix + ":Movie")
         print("    Facts:")
         if element in movies_dir:
             for director in movies_dir[element]:
+                director = director.replace("(", "")
+                director = director.replace(")", "")
                 print("     " + prefix + ":director  "+prefix+":"+director +",")
         for actor in movies_ac[element]:
+            actor = actor.replace("(", "")
+            actor = actor.replace(")", "")
             print("     "+prefix+":actor  "+prefix+":"+actor+",")
-        print("     "+prefix+":year  "+str(element[1]))
+        print("     "+prefix+":year  "+str(elemen[1]))
         print()
         print()
 if __name__ == "__main__":
