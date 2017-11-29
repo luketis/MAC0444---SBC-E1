@@ -86,39 +86,37 @@ def get_cast(movies, paths):
 
 def set_ontology_ad(dict_of, type_data, prefix, path, rel):
     for element in dict_of:
-        print("    <!-- " + prefix[1:] + element + " -->")
+        print("Individual: " + prefix + ":" + element)
         print()
-        print("    <owl:NamedIndividual rdf:about="+prefix+element+"\">")
-        print("        <rdf:type rdf:resource="+ prefix+type_data+"\"/>")
-        
+        print("    Types:")
+        print("        " + prefix + ":" + type_data)
+        print("    Facts:")
         for movie in dict_of[element]:
-            print("        <"+rel+" rdf:resource=" +prefix+ movie[0]+ "\"/>")
+            print("     "+prefix+":"+rel+"  "+prefix+":"+movie[0]+",")
         name = element.split("_")
         name = ["".join(name[:-1]), name[-1]]
         if len(name) > 1:
-            print("        <renata:FOAF-modifiedfamilyName>"+name[0]+"</renata:FOAF-modifiedfamilyName>")
-        
-        print("        <renata:FOAF-modifiedfirstName>"+name[-1]+"</renata:FOAF-modifiedfirstName>")
-        print("    </owl:NamedIndividual>")
+            print("     renata:FOAF-modifiedfamilyName  \""+name[0]+"\",")
+    
+        print("     renata:FOAF-modifiedfirstName  \""+name[-1]+ "\"")
         print()
-
+        print()
 
 def set_ontology_m(movies_ac, movies_dir, prefix, path):
     for element in movies_ac:
-        print("    <!-- " + prefix[1:] + element[0] + " -->")
+        print("Individual: " + prefix + ":" + element[0])
         print()
-        print("    <owl:NamedIndividual rdf:about="+prefix+element[0]+"\">")
-        print("        <rdf:type rdf:resource="+ prefix+"Movie"+"\"/>")
-        
+        print("    Types:")
+        print("        " + prefix + ":Movie")
+        print("    Facts:")
         if element in movies_dir:
             for director in movies_dir[element]:
-                print("        <director rdf:resource=" +prefix+ director+ "\"/>")
+                print("     " + prefix + ":director  "+prefix+":"+director +",")
         for actor in movies_ac[element]:
-            print("        <actor rdf:resource=" +prefix+ actor+ "\"/>")
-        print("        <year rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">"+str(element[1])+"</year>")
-        print("    </owl:NamedIndividual>")
+            print("     "+prefix+":actor  "+prefix+":"+actor+",")
+        print("     "+prefix+":year  "+str(element[1]))
         print()
-
+        print()
 if __name__ == "__main__":
     star_movie = {'wes_movies':get_starred_movies("./wes"),
               'tarantino_movies': get_starred_movies("./tarantino"),
@@ -152,8 +150,8 @@ if __name__ == "__main__":
             director2movie = pickle.load(f)
         with open("movie2director.pickle", "rb") as f:
             movie2director = pickle.load(f)
-    rdf_about =  "\"http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#"
-
+    #rdf_about =  "\"http://www.semanticweb.org/luketis/ontologies/2017/10/untitled-ontology-2#"
+    rdf_about = "untitled-ontology-2"
     set_ontology_ad(actor2movie, "Actor", rdf_about, "a", "acted_in")
     set_ontology_ad(director2movie, "Director", rdf_about, "a", "directed")
     set_ontology_m(movie2actor, movie2director, rdf_about, "a")
